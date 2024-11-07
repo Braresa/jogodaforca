@@ -14,20 +14,17 @@
         <link rel="stylesheet" href="./hangman.css" />
 
         <script type="module" src="./hangman.js"></script>
-        <title>Hangman | M.Yousaf</title>
+        <title>Jogo da forca</title>
     </head>
     <body>
         <div class="caution">
-            *Playing on mobile won't be a better experience
+            
         </div>
         <div class="header">
             <img id="hangman" src="./assets/images/0.png" alt="" />
             <div class="title-cont">
-                <h1 class="title">Hangman</h1>
-                <h3 class="sub-title">
-                    Guess the word <br />(or it could be the name of a
-                    programming language)
-                </h3>
+                <h1 class="title">Jogo da forca</h1>
+
             </div>
         </div>
         <div class="main">
@@ -121,39 +118,42 @@
 
         <div class="start">
             <button type="button" id="start" class="start-button">
-                <i id="start-game">start Game</i>
+                <i id="start-game">JOGAR</i>
             </button>
-            <button class="hint" id="hint">
-                <i>Hint</i>
+              <button class="hint" id="hint">
+                <i>DICA</i>
             </button>
+
         </div>
 
         <!-- Modals -->
         <!-- Hint Modal -->
         <dialog class="modal modal-hint" id="modal-hint">
-            <h3>Taking a hint costs 2 tries</h3>
-            <p>Are you sure to make the trade?🤔</p>
+            <h3>Optar pela dica custa 2 tentativas</h3>
+            <p>Você tem certeza?</p>
             <div class="hint-btn">
-                <button id="close-hint">
-                    Nah🙄, I'll figure it out myself
+                <button class="close-button" id="take-hint">
+                    Sim
                 </button>
-                <button class="close-button" id="take-hint">Yeah sure😇</button>
+                <button id="close-hint">
+                    Não
+                </button>
             </div>
         </dialog>
         <!-- Not enough tries modal -->
         <dialog class="modal" id="modal-tries0">
-            <h3>You don't have enough tries left😞</h3>
+            <h3>Você não têm tentativas suficiente!</h3>
         </dialog>
 
         <!-- Win Modal -->
         <dialog class="modal modal-win" id="modal-win">
-            <h3>Congratulations, You won the game🤩</h3>
+            <h3>Parabéns! Você ganhou o jogo!</h3>
         </dialog>
 
         <!-- Lose Modal -->
         <dialog class="modal" id="modal-lose">
-            <h3>Unfortunately, You lost the game 🤕</h3>
-            <p id="secret-word">Secret word was</p>
+            <h3>Infelizmente, você perdeu o jogo</h3>
+            <p id="secret-word">A palavra secreta era</p>
         </dialog>
 
         <!-- About Modal -->

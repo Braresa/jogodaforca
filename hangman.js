@@ -2,121 +2,9 @@
 import confetti from "https://cdn.skypack.dev/canvas-confetti";
 
 let words = [
-    "about",
-    "apple",
-    "aunt",
-    "away",
-    "bash",
-    "back",
-    "before",
-    "box",
-    "buy",
-    "csharp",
-    "cake",
-    "chair",
-    "circle",
-    "come",
-    "dart",
-    "dance",
-    "deep",
-    "die",
-    "drop",
-    "elixir",
-    "each",
-    "empty",
-    "ever",
-    "eye",
-    "fortran",
-    "face",
-    "fever",
-    "firm",
-    "fork",
-    "golang",
-    "gate",
-    "gift",
-    "gold",
-    "gun",
-    "haskell",
-    "hair",
-    "hurt",
-    "head",
-    "hen",
-    "ink",
-    "isle",
-    "iron",
-    "ice",
-    "javascript",
-    "java",
-    "junk",
-    "jam",
-    "juice",
-    "jug",
-    "kotlin",
-    "kill",
-    "knee",
-    "knife",
-    "know",
-    "lua",
-    "long",
-    "last",
-    "light",
-    "lame",
-    "matlab",
-    "moon",
-    "milk",
-    "mad",
-    "meal",
-    "native",
-    "negro",
-    "news",
-    "nice",
-    "ocaml",
-    "off",
-    "old",
-    "over",
-    "oil",
-    "python",
-    "pain",
-    "price",
-    "pen",
-    "pull",
-    "php",
-    "quick",
-    "queen",
-    "queer",
-    "rust",
-    "rain",
-    "rice",
-    "run",
-    "ruby",
-    "repair",
-    "spell",
-    "scala",
-    "skin",
-    "swift",
-    "story",
-    "solidity",
-    "soup",
-    "true",
-    "thin",
-    "typescript",
-    "tilte",
-    "toe",
-    "ugly",
-    "use",
-    "unit",
-    "voice",
-    "visit",
-    "water",
-    "wasm",
-    "walk",
-    "wife",
-    "wire",
-    "yard",
-    "yell",
-    "young",
-    "zoo",
-    "zero",
+    "jumanji",
+    "boneco",
+    "teste"
 ];
 
 // ============================================================
@@ -162,7 +50,7 @@ start_button.addEventListener("click", () => {
     setTries();
 });
 
-function play(id) {
+function play(id)  { // id = letra
     if (tries > 0) {
         let match = word.includes(id);
         let res = 1;
@@ -184,7 +72,7 @@ function play(id) {
             decTries();
             document.querySelector(
                 ".tries"
-            ).innerHTML = `${tries} out of ${totalTries} tries left`;
+            ).innerHTML = `${tries} de ${totalTries} tentativas restantes`;
             setImg();
         }
     }
@@ -241,7 +129,7 @@ function hint() {
         });
         arr[getRnd(0, arr.length - 1)].classList.add("visible");
         tries = tries - 2;
-        document.querySelector(".tries").innerHTML = `tries: ${tries}`;
+        document.querySelector(".tries").innerHTML = `Tentativas restantes: ${tries}`;
         setImg();
         winLose();
     } else if (tries <= 2) {
@@ -251,8 +139,8 @@ function hint() {
 
 function resetAll() {
     tries = 0;
-    document.querySelector(".tries").innerHTML = "tries";
-    startGame.innerHTML = "Play Again";
+    document.querySelector(".tries").innerHTML = "";
+    startGame.innerHTML = "Jogar Novamente";
     img.src = "./assets/images/0.png";
     word = [];
     dupWord = [];
@@ -293,7 +181,7 @@ function setImg() {
 function setTries() {
     tries = word.length;
     totalTries = word.length;
-    tries_div.innerHTML = `${tries} out of ${totalTries} tries left`;
+    tries_div.innerHTML = `${tries} de ${totalTries} tentativas restantes`;
 }
 
 function decTries() {
@@ -326,7 +214,7 @@ function enableBtns() {
 
 function winLose() {
     if (tries === 0) {
-        secretWord.innerHTML = `secret word was "${dupWord.join("")}"`;
+        secretWord.innerHTML = `A palavra secreta era "${dupWord.join("")}"`;
         openLose();
         setTimeout(() => {
             closeLose();
