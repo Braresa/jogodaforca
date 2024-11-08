@@ -2,9 +2,14 @@
 import confetti from "https://cdn.skypack.dev/canvas-confetti";
 
 let words = [
+    "rio",
+    "ratatouille",
     "jumanji",
-    "boneco",
-    "teste"
+    "batman",
+    "chucky",
+    "caça-fantasmas",
+    "bridgerton",
+    "corra"
 ];
 
 // ============================================================
@@ -179,8 +184,8 @@ function setImg() {
 }
 
 function setTries() {
-    tries = word.length;
-    totalTries = word.length;
+    tries = word.length + 2;
+    totalTries = word.length + 2;
     tries_div.innerHTML = `${tries} de ${totalTries} tentativas restantes`;
 }
 
